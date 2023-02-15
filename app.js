@@ -1,44 +1,43 @@
-var arr = [
-    null, 
-    123, 
-    undefined, 
-    null, 
-    'qwerty', 
-    34, 
-    65, 
-    undefined, 
-    null, 
-    null, 
-    43, 
-    'aerg', 
-    'пкцйк'
-]
-//   console.log(typeof arr[4]);
-
-var typeNull = []
-var typeNumber = []
-var typeString = []
-var typeUndefined = []
-
-for(var i = 0; i < arr.length; i++) {
-    if(arr[i] === null){
-        typeNull.push(arr[i])
-
-    }else if(typeof arr[i] == 'number'){
-        typeNumber.push(arr[i])
-
-    }else if(typeof arr[i] == 'undefined'){
-        typeUndefined.push(arr[i])
-
-    }else if(typeof arr[i] == 'string'){
-        typeString.push(arr[i])
-
-    }
-    
+// Обьект
+var user = {
+    name: 'Aidana',
+    surname: 'Bekova',
+    secondNumber: null,
+    address: {
+        sity: 'Bishkek',
+        street: undefined,
+        car: {
+            d: {
+                f: {
+                    d: 'sd'
+                }
+            }
+        }
+    },
+    isMarried: false
 }
 
-console.log(typeNull);
-console.log(typeNumber);
-console.log(typeString);
-console.log(typeUndefined);
+// добавление
+user.laptop = 'mac'
+console.log(user);
 
+// delete
+delete user.laptop
+console.log(user);
+
+// методы обьекта
+console.log(Object.keys(user)); //['name', 'surname', 'secondNumber', 'address', 'isMarried']
+
+console.log(Object.values(user)); // ['Aidana', 'Bekova', null, {…}, false]
+
+console.log(Object.entries(user));
+
+//Результат в консоли: [Array(2), Array(2), Array(2), Array(2), Array(2)]
+// 0: (2) ['name', 'Aidana']
+// 1: (2) ['surname', 'Bekova']
+// 2: (2) ['secondNumber', null]
+// 3: (2) ['address', {…}]
+// 4: (2) ['isMarried', false]
+// length: 5
+
+console.log(user.hasOwnProperty('name'));
